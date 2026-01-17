@@ -67,21 +67,32 @@ export default function App() {
   const [wish, setWish] = useState(
     wishes[Math.floor(Math.random() * wishes.length)],
   );
+  const [showModal, setShowModal] = useState(false);
+
+  const generateNewWish = () => {
+    setWish(wishes[Math.floor(Math.random() * wishes.length)]);
+    setShowModal(true);
+  };
 
   return (
     <div className="container">
       <img src={logo} className="logo" />
       <h1>ОбУ „Христо Ботев“</h1>
       <h2>с. Долно Дряново</h2>
-      <p className="wish">{wish}</p>
-      <button
-        onClick={() =>
-          setWish(wishes[Math.floor(Math.random() * wishes.length)])
-        }
-        className="newWishButton"
-      >
-        Ново пожелание
+      <button onClick={generateNewWish} className="newWishButton">
+        Генерирай пожелание
       </button>
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <img src={logo} className="modal-logo" alt="School Logo" />
+            <p className="modal-wish">{wish}</p>
+            <button onClick={() => setShowModal(false)} className="closeButton">
+              Затвори
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
