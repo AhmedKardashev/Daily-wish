@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f4ff;
+}
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+.wish {
+  font-size: 22px;
+  margin: 20px 0;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
