@@ -23,3 +23,12 @@ button {
   padding: 10px 20px;
   font-size: 16px;
 }
+
+.newWishButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

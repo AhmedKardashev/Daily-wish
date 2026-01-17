@@ -78,6 +78,7 @@ export default function App() {
         onClick={() =>
           setWish(wishes[Math.floor(Math.random() * wishes.length)])
         }
+        className="newWishButton"
       >
         Ново пожелание
       </button>
